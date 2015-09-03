@@ -1,5 +1,7 @@
-ng2-play
+Angular2-routing-ex
 ========
+
+Based on ng2-play
 
 The goal of this repo is to prepare a minimal ("walking skeleton") project build with Angular2.0 and ES6
 
@@ -26,7 +28,6 @@ After completing installation type in your favourite shell:
 ### Run-time
 
 * [traceur-runtime](https://github.com/google/traceur-compiler): traceur utils and ES6 polyfill
-* [reflect-metadata](https://github.com/rbuckton/ReflectDecorators): ES7 Reflection API for Decorator Metadata polyfill
 * [systemjs](https://github.com/systemjs/systemjs): ES6 modules loading (module loader polyfill)
 
 ## Learning materials
@@ -35,7 +36,7 @@ After completing installation type in your favourite shell:
 
 * [Practical Workflows for ES6 Modules, Fluent 2014](https://www.youtube.com/watch?v=0VUjM-jJf2U)
 * [Guy Bedford: Package Management for ES6 Modules, JSConf2014](https://www.youtube.com/watch?v=szJjsduHBQQ)
-* [Loader API specification](http://whatwg.github.io/loader/) 
+* [Loader API specification](http://whatwg.github.io/loader/)
 
 ### Zones / long stack-traces
 
