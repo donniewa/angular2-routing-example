@@ -13,7 +13,9 @@ var PATHS = {
       'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
       'node_modules/systemjs/dist/system-csp-production.src.js',
       'node_modules/reflect-metadata/Reflect.js',
-      'node_modules/angular2/bundles/angular2.js'
+      'node_modules/angular2/bundles/angular2.dev.js',
+      'node_modules/angular2/bundles/http.dev.js',
+      'node_modules/angular2/bundles/router.dev.js'
     ]
 };
 
