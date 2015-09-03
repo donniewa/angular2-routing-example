@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../../tsd.d.ts" />
 
 import { Component, View } from 'angular2/angular2'
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'

@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../../tsd.d.ts" />
 
 import { Component, View } from 'angular2/angular2'
 
@@ -7,7 +7,7 @@ import { Component, View } from 'angular2/angular2'
 })
 
 @View({
-    template: `<h1>HOME PAGE</h1>`,
+    template: `<h1>HOME PAGE!</h1>`,
     directives: []
 })
 

@@ -1,11 +1,14 @@
-var gulp = require('gulp');
-var del = require('del');
-var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
-var traceur = require('gulp-traceur');
+var gulp      = require('gulp');
+var del       = require('del');
+var plumber   = require('gulp-plumber');
+var rename    = require('gulp-rename');
+var traceur   = require('gulp-traceur');
+var ts        = require('gulp-typescript');
+var tsProject = ts.createProject('tsconfig.json');
 
 var PATHS = {
     src: {
+      ts: 'src/**/*.ts',
       js: 'src/**/*.js',
       html: 'src/**/*.html'
     },
@@ -21,6 +24,16 @@ var PATHS = {
 
 gulp.task('clean', function(done) {
   del(['dist'], done);
+});
+
+gulp.task('typescripts', function() {
+  var tsResult = tsProject.src(PATHS.src.ts) // instead of gulp.src(...)
+    .pipe(rename({extname: ''})) //hack, see: https://github.com/sindresorhus/gulp-traceur/issues/54
+    .pipe(plumber())
+    .pipe(rename({extname: '.ts'})) //hack, see: https://github.com/sindresorhus/gulp-traceur/issues/54
+    .pipe(ts(tsProject));
+
+  return tsResult.js.pipe(gulp.dest('dist'));
 });
 
 gulp.task('js', function () {
@@ -61,6 +74,7 @@ gulp.task('play', ['default'], function () {
 
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);
+    gulp.watch(PATHS.src.ts, ['typescripts']);
 
     app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
     http.createServer(app).listen(port, function () {
@@ -68,4 +82,4 @@ gulp.task('play', ['default'], function () {
     });
 });
 
-gulp.task('default', ['js', 'html', 'libs']);
+gulp.task('default', ['typescripts', 'js', 'html', 'libs']);

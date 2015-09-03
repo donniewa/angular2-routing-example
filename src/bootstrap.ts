@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../tsd.d.ts" />
 
 import { bootstrap } from 'angular2/angular2';
 import { ROUTER_BINDINGS } from 'angular2/router';

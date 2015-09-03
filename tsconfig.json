@@ -3,7 +3,8 @@
     "path": "/usr/local/bin/npm",
     "compilerOptions": {
         "emitDecoratorMetadata": true,
-        "experimentalDecorators": true, //add this to your config.
-        "target": "es6"
+        "experimentalDecorators": true,
+        "target": "ES5",
+        "module": "AMD"
     }
 }
