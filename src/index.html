@@ -1,28 +1,32 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Angular2 playground</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular2 playground</title>
+        <base href="/" />
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+        <meta name="viewport" content="initial-scale=1" />
+    </head>
 
-<body>
-    <hello>Loading...</hello>
-</body>
+    <body layout="column">
+        <app>Loading...</app>
+    </body>
 
-<!-- ES6-related imports -->
-<script src="lib/traceur-runtime.js"></script>
-<script src="lib/system-csp-production.src.js"></script>
-<script src="lib/Reflect.js"></script>
+    <!-- ES6-related imports -->
+    <script src="lib/traceur-runtime.js"></script>
+    <script src="lib/system-csp-production.src.js"></script>
+    <script>
+        //configure system loader
+        System.config({defaultJSExtensions: true});
+    </script>
 
-<script>
-    //configure system loader
-    System.config({defaultJSExtensions: true});
-</script>
-<script src="lib/angular2.js"></script>
+    <!-- Angular Related Dependencies -->
+    <script src="lib/angular2.dev.js"></script>
+    <script src="lib/router.dev.js"></script>
 
-<script>
-    //bootstrap the Angular2 application
-    System.import('hello').catch(console.log.bind(console));
-</script>
-
+    <script>
+        //bootstrap the Angular2 application
+        System.import('bootstrap').catch(console.log.bind(console));
+    </script>
 </html>
