@@ -28,9 +28,6 @@ gulp.task('clean', function(done) {
 
 gulp.task('typescripts', function() {
   var tsResult = tsProject.src(PATHS.src.ts) // instead of gulp.src(...)
-    .pipe(rename({extname: ''})) //hack, see: https://github.com/sindresorhus/gulp-traceur/issues/54
-    .pipe(plumber())
-    .pipe(rename({extname: '.ts'})) //hack, see: https://github.com/sindresorhus/gulp-traceur/issues/54
     .pipe(ts(tsProject));
 
   return tsResult.js.pipe(gulp.dest('dist'));
@@ -65,19 +62,23 @@ gulp.task('libs', function () {
 
 gulp.task('play', ['default'], function () {
 
-    var http = require('http');
-    var connect = require('connect');
-    var serveStatic = require('serve-static');
-    var open = require('open');
-
-    var port = 9000, app;
+    var express = require('express');
+    var open    = require('open');
+    var app     = express();
+    var port    = 9000;
 
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);
     gulp.watch(PATHS.src.ts, ['typescripts']);
 
-    app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
-    http.createServer(app).listen(port, function () {
+    // Serve the static content
+    app.use(express.static(__dirname + '/dist'));  // serve everything that is static
+
+    app.get('*', function(req, res) {
+      res.sendFile('./dist/index.html'); // load our public/index.html file
+    });
+
+    app.listen(port, function () {
       open('http://localhost:' + port);
     });
 });

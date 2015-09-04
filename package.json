@@ -1,6 +1,6 @@
 {
   "name": "angular-router-example",
-  "license" : "MIT",
+  "license": "MIT",
   "version": "0.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +15,6 @@
   },
   "homepage": "https://github.com/pkozlowski-opensource/ng2-play",
   "devDependencies": {
-    "connect": "^3.3.4",
     "del": "~1.1.1",
     "gulp": "~3.8.10",
     "gulp-plumber": "^1.0.0",
@@ -23,11 +22,11 @@
     "gulp-size": "^1.2.1",
     "gulp-traceur": "0.17.*",
     "gulp-typescript": "^2.8.2",
-    "open": "0.0.5",
-    "serve-static": "~1.8.1"
+    "open": "0.0.5"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.36",
+    "express": "^4.13.3",
     "systemjs": "0.18.4"
   }
 }
