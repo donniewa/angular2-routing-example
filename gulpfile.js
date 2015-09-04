@@ -75,7 +75,7 @@ gulp.task('play', ['default'], function () {
     app.use(express.static(__dirname + '/dist'));  // serve everything that is static
 
     app.get('*', function(req, res) {
-      res.sendFile('./dist/index.html'); // load our public/index.html file
+      res.sendFile(__dirname + '/dist/index.html'); // load our public/index.html file
     });
 
     app.listen(port, function () {
