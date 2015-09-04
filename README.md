@@ -24,6 +24,7 @@ After completing installation type in your favourite shell:
 
 * [traceur](https://github.com/google/traceur-compiler): ES6 -> ES5 transpilation
 * [ystemjs/builder](https://github.com/systemjs/builder): ES6 modules bundler
+* [gulp-typescript](https://github.com/ivogabe/gulp-typescript): Gulp Typescript Compiler
 
 ### Run-time
 
