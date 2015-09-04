@@ -3,7 +3,7 @@ Angular2-routing-ex
 
 Based on ng2-play
 
-The goal of this repo is to prepare a minimal ("walking skeleton") project build with Angular2.0 and ES6
+The goal of this repo is to prepare a minimal ("walking skeleton") project build with Angular2.0 and ES6 / TypeScript.  The main focus is a simple router configuration setup located in the app.ts file.
 
 ## Install
 
